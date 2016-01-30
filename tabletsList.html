@@ -1,0 +1,18 @@
+<div ng-controller="phonesController">
+  <p>Количество элементов: <span ng-bind="tablets.length"></span></p>
+  <p>Первый элемент: <span ng-bind="tablets[0].name"></span></p>
+</div>
+<table class="table table-striped" ng-controller="phonesController">
+  <tr>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Company</th>
+  </tr>
+  <tr ng-repeat="tablet in tablets | filter: search">
+    <td>{{$index + 1}}</td>
+    <td>{{tablet.name}}</td>
+    <td>{{tablet.price}}</td>
+    <td>{{tablet.company.country}}</td>
+  </tr>
+</table>
