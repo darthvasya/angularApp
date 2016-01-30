@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="questionApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Question app</title>
+
+    <link rel="stylesheet" href="../css/questionApp.css" media="screen" title="no title" charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+
+  </head>
+  <body>
+    <div class="" ng-controller="questionsController">
+
+      <div class="quest" ng-class="questColorClass"
+      ng-mouseenter="changeClass($event)"
+      ng-mouseleave="changeClass($event)">
+        <h3>{{question.text}}</h3>
+        <p>{{question.author}}</p>
+        <p><i>{{question.date}}</i></p>
+      </div>
+
+      <div class="answers">
+        <div class="answer" ng-repeat="answer in question.answers">
+          <div class="vote">
+            <a class="vote-up" ng-click="voteUp(answer)"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <span class="rate">{{answer.rate}}</span>
+            <a class="vote-down" ng-click="voteDown(answer)"><span class="glyphicon glyphicon-chevron-down"></span></a>
+          </div>
+          <b>{{answer.text}}</b>
+          <p>{{answer.text}}</p>
+          <p><i>{{answer.date}}</i></p>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="../js/controllers/questionApp.js"></script>
+  </body>
+</html>
