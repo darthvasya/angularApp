@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Question app</title>
 
-    <link rel="stylesheet" href="../css/questionApp.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/questionApp.css" media="screen" title="no title" charset="utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
@@ -24,7 +24,7 @@
     <div answer-list="question"><h3>Ответы</h3></div>
     </div>
 
-    <div style="border: 5px dashed #566573;" ng-controller="answerController">
+    <div class="answForm" ng-controller="answerController">
       <form name="answerForm">
         <fieldset>
           <div class="form-group">
@@ -35,18 +35,15 @@
             <label for="answAuthor">Ваше имя</label>
             <input type="text" ng-model="answer.author" class="form-control" id="answAuthor" placeholder="Your name" required>
           </div>
-          <div class="form-group">
-            <label for="dateAnsw">Дата ответа</label>
-            <input type="text" ng-model="answer.date" class="form-control" id="answAuthor" required  ng-pattern="/\d\d/\d\d/\d\d\d\d/" placeholder="Введите дату">
-          </div>
         </fieldset>
 
         <button type="submit"  ng-click="save(answer, answerForm)" class="btn btn-default">Отправить</button>
       </form>
     </div>
 
-
-    <script type="text/javascript" src="../js/controllers/questionApp.js"></script>
-    <script type="text/javascript" src="../js/answerList.js"></script>
+    <script type="text/javascript" src="js/dataService.js"></script>
+    <script type="text/javascript" src="js/controllers/questionApp.js"></script>
+    <script type="text/javascript" src="js/controllers/answerController.js"></script>
+    <script type="text/javascript" src="js/answerList.js"></script>
   </body>
 </html>
