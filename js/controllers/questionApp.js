@@ -27,6 +27,7 @@ var myApp = angular.module('questionApp', []);
 myApp.controller('questionsController', function($scope) {
 
   $scope.question = model;
+
   $scope.sortparam = '-rate';
 
   $scope.voteUp = function(answer) {
@@ -40,5 +41,19 @@ myApp.controller('questionsController', function($scope) {
     $scope.questColorClass = e.type = "mouseover" ? "questselectedcolor" : "questcolor";
   };
 
-
 });
+
+myApp.controller('answerController', function($scope) {
+  $scope.save = function (answer, answerForm) {
+            if(answerForm.$valid){
+                // действия по сохранению
+
+                //другой контроллер
+                //$scope.question.answers.push({text: 'text', author: 'vasya', date: '12/11/2013', rate: 0});
+
+                alert(answer.text + ", ваш ответ сохранен");
+            }
+        };
+});
+
+ 
