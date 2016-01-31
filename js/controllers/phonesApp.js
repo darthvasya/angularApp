@@ -1,7 +1,14 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller("phonesController", function($scope) {
-
+    $scope.companys = [
+      {company: ''},
+      {company: 'Nokia'},
+      {company: 'Samsung'},
+      {company: 'Xiaomi'},
+      {company: 'LG'},
+      {company: 'Lenovo'}
+    ];
     $scope.phones = [{
           name: 'Nokia Lumia 630',
           year: 2014,

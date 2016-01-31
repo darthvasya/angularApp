@@ -10,12 +10,13 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 
   </head>
-  <body>
-    <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+  <body ng-init="search = ''">
+    <h3>Поиск по названию:</h3>
+    <input type="text" class="form-control" placeholder="Search for..." ng-model="search" >
 
     <div class="" ng-controller="phonesController">
-      <div class="radio radioGroup" ng-repeat="button in modes">
-        <label>
+      <div class="radio radioGroup" >
+        <label class="radio-inline" ng-repeat="button in modes">
             <input type="radio" ng-model="data.mode"  value="{{button.value}}">
             {{button.label}}
         </label>
@@ -24,6 +25,12 @@
         <h4>Сортировка</h3>
           <button class="btn" type="button" name="button" ng-click="sort('up')">По возрастанию</button>
           <button class="btn" type="button" name="button" ng-click="sort('down')">По убыванию</button>
+          <div class="form-group">
+              <label for="sel1" ng-init="searchCompany = ''">Компания производитель:</label>
+              <select class="form-control" id="sel1"  ng-model="searchCompany" style="width: 200px;">
+                <option ng-repeat="selected in companys">{{selected.company}}</option>
+              </select>
+         </div>
       </div>
       <div ng-include="setFile()"></div>
     </div>

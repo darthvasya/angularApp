@@ -9,7 +9,7 @@
     <th>Price</th>
     <th>Company</th>
   </tr>
-  <tr ng-repeat="phone in phones | orderBy:sortPrice | filter: search ">
+  <tr ng-repeat="phone in phones | orderBy:sortPrice | filter: {name:search} | filter: {company: searchCompany}">
     <td>{{$index + 1}}</td>
     <td>{{phone.name}}</td>
     <td>{{phone.price}}</td>
