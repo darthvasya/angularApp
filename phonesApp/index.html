@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Phones App</title>
+    <link rel="stylesheet" href="../css/phoneApp.css" media="screen" title="no title" charset="utf-8">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -13,13 +14,17 @@
     <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
 
     <div class="" ng-controller="phonesController">
-      <div class="radio" ng-repeat="button in modes">
+      <div class="radio radioGroup" ng-repeat="button in modes">
         <label>
             <input type="radio" ng-model="data.mode"  value="{{button.value}}">
             {{button.label}}
         </label>
       </div>
-
+      <div class="sortBtns">
+        <h4>Сортировка</h3>
+          <button class="btn" type="button" name="button" ng-click="sort('up')">По возрастанию</button>
+          <button class="btn" type="button" name="button" ng-click="sort('down')">По убыванию</button>
+      </div>
       <div ng-include="setFile()"></div>
     </div>
 

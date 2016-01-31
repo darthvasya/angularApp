@@ -12,7 +12,7 @@ var model = {
          text: 'AngularJS лучше всех',
          author: 'Олег Кузнецов',
          date: '20/10/2013',
-         rate:0
+         rate:3
      },{
          text: 'Я бы использовал knockout',
          author: 'Неизвестный',
@@ -27,6 +27,7 @@ var myApp = angular.module('questionApp', []);
 myApp.controller('questionsController', function($scope) {
 
   $scope.question = model;
+  $scope.sortparam = '-rate';
 
   $scope.voteUp = function(answer) {
     answer.rate++;

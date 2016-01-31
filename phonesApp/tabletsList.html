@@ -9,10 +9,10 @@
     <th>Price</th>
     <th>Company</th>
   </tr>
-  <tr ng-repeat="tablet in tablets | filter: search">
+  <tr ng-repeat="tablet in tablets | orderBy:sortPrice | filter: search">
     <td>{{$index + 1}}</td>
     <td>{{tablet.name}}</td>
     <td>{{tablet.price}}</td>
-    <td>{{tablet.company.country}}</td>
+    <td>{{tablet.company}}</td>
   </tr>
 </table>

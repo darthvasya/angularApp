@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller("phonesController", function($scope) {
 
-  $scope.phones = [{
+    $scope.phones = [{
           name: 'Nokia Lumia 630',
           year: 2014,
           price: 200,
@@ -35,9 +35,22 @@ myApp.controller("phonesController", function($scope) {
           company: 'Lenovo'
       }];
 
+      //сортировка
+      $scope.sort = function (typeSort) {
+        if(typeSort == 'up') {
+          $scope.sortPrice = 'price';
+          console.log($scope.sortPrice);
+        }
+        if(typeSort != 'up') {
+          $scope.sortPrice = '-price';
+          console.log($scope.sortPrice);
+        }
+      };
+
+      //выбор подгружаемого файла
       $scope.data = {};
       $scope.setFile = function() {
-        console.log($scope.data.mode);
+
         if($scope.data.mode == 'Tablets')
           return 'tabletsList.html';
         if($scope.data.mode == 'Phones')
