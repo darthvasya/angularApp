@@ -1,5 +1,3 @@
-
-
 questionApp.controller('questionsController', function($scope, $http, dataService) {
 
 

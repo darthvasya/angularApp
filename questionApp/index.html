@@ -7,40 +7,15 @@
     <link rel="stylesheet" href="css/questionApp.css" media="screen" title="no title" charset="utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0-rc.2/angular.js"></script>
+	  <script src="https://code.angularjs.org/1.5.0-rc.2/angular-route.min.js"></script>
   </head>
   <body>
-    <div class="" ng-controller="questionsController">
 
-      <div class="quest" ng-class="questColorClass"
-      ng-mouseenter="changeClass($event)"
-      ng-mouseleave="changeClass($event)">
-        <h3>{{question.text}}</h3>
-        <p>{{question.author}}</p>
-        <p><i>{{question.date}}</i></p>
-      </div>
+    <nav><a href="#/question">Вопрос</a>|<a href="#/answer">Ответить</a></nav>
+    <ng-view></ng-view>
 
-    <div answer-list="question"><h3>Ответы</h3></div>
-    </div>
-
-    <div class="answForm" ng-controller="answerController">
-      <form name="answerForm">
-        <fieldset>
-          <div class="form-group">
-            <label for="answText">Текст ответа</label>
-            <input type="text" ng-model="answer.text" class="form-control" id="answText" placeholder="Text..." required>
-          </div>
-          <div class="form-group">
-            <label for="answAuthor">Ваше имя</label>
-            <input type="text" ng-model="answer.author" class="form-control" id="answAuthor" placeholder="Your name" required>
-          </div>
-        </fieldset>
-
-        <button type="submit"  ng-click="save(answer, answerForm)" class="btn btn-default">Отправить</button>
-      </form>
-    </div>
-
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/dataService.js"></script>
     <script type="text/javascript" src="js/controllers/questionApp.js"></script>
     <script type="text/javascript" src="js/controllers/answerController.js"></script>

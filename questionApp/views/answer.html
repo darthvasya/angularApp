@@ -1,0 +1,16 @@
+<div class="answForm">
+  <form name="answerForm">
+    <fieldset>
+      <div class="form-group">
+        <label for="answText">Текст ответа</label>
+        <input type="text" ng-model="answer.text" class="form-control" id="answText" placeholder="Text..." required>
+      </div>
+      <div class="form-group">
+        <label for="answAuthor">Ваше имя</label>
+        <input type="text" ng-model="answer.author" class="form-control" id="answAuthor" placeholder="Your name" required>
+      </div>
+    </fieldset>
+
+    <button type="submit"  ng-click="save(answer, answerForm)" class="btn btn-default">Отправить</button>
+  </form>
+</div>
